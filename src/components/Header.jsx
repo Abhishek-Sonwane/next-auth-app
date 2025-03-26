@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 
@@ -19,12 +20,12 @@ const Header = () => {
           <ul className="flex gap-4">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
-            {/* <SignedIn>
+            <SignedIn>
               <UserButton />
             </SignedIn>
             <SignedOut>
               <SignInButton />
-            </SignedOut> */}
+            </SignedOut>
           </ul>
         </nav>
       </div>
