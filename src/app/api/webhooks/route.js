@@ -57,22 +57,23 @@ export async function POST(req) {
   if (eventType === "user.created" || eventType === "user.updated") {
     const { id, first_name, last_name, image_url, email_addresses, username } =
       evt?.data;
-    try {
-      await createOrUpdateUser(
-        id?.toString(),
-        first_name.toString(),
-        last_name.toString(),
-        image_url.toString(),
-        email_addresses.toString(),
-        username.toString()
-      );
-      return new Response("User is Created or Updated", { status: 200 });
-    } catch (error) {
-      console.log("Error Creating or Updating user", error);
-      return new Response("Error Occured", {
-        status: 400,
-      });
-    }
+    // try {
+    //   await createOrUpdateUser(
+    //     id?.toString(),
+    //     first_name.toString(),
+    //     last_name.toString(),
+    //     image_url.toString(),
+    //     email_addresses.toString(),
+    //     username.toString()
+    //   );
+    //   return new Response("User is Created or Updated", { status: 200 });
+    // } catch (error) {
+    //   console.log("Error Creating or Updating user", error);
+    //   return new Response("Error Occured", {
+    //     status: 400,
+    //   });
+    // }
+    console.log("User Created", first_name);
   }
   if (eventType === "user.deleted") {
     const { id } = evt?.data;
