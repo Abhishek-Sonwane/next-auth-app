@@ -59,12 +59,12 @@ export async function POST(req) {
       evt?.data;
     try {
       await createOrUpdateUser(
-        id,
-        first_name,
-        last_name,
-        image_url,
-        email_addresses,
-        username
+        id?.toString(),
+        first_name.toString(),
+        last_name.toString(),
+        image_url.toString(),
+        email_addresses.toString(),
+        username.toString()
       );
       return new Response("User is Created or Updated", { status: 200 });
     } catch (error) {
