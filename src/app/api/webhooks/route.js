@@ -78,15 +78,17 @@ export async function POST(req) {
   if (eventType === "user.deleted") {
     const { id } = evt?.data;
 
-    try {
-      await deleteUser(id);
-      return new Response("User is Deleted", { status: 200 });
-    } catch (error) {
-      console.log("Error Deleting User", error);
-      return new Response("Error Occured", {
-        status: 400,
-      });
-    }
+    // try {
+    //   await deleteUser(id);
+    //   return new Response("User is Deleted", { status: 200 });
+    // } catch (error) {
+    //   console.log("Error Deleting User", error);
+    //   return new Response("Error Occured", {
+    //     status: 400,
+    //   });
+    // }
+
+    console.log("User Deleted");
   }
 
   return new Response("Webhook received", { status: 200 });
